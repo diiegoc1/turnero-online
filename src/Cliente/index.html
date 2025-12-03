@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnero Online</title>
+    <link rel="stylesheet" href="syle.css">
+
+<body>
+    <div class='contenedor' id='cabecero'>
+        <h1>Turnero</h1>
+    </div>
+
+
+    <section id="reservar" class="reservation-section">
+        <div class="container">
+            <h2 class="section-title">Reserva tu Turno</h2>
+            <div class="reservation-form-container">
+                <form id="reservation-form" class="reservation-form">
+                    <div class="form-group">
+                        <label for="room-type">Tipo de servicio</label>
+                        <select id="room-type" name="room-type">
+                            <option value="">Seleccione tipo de servicio</option>
+                            <!-- Opciones se cargarán dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="check-in">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-turno">Hora del turno:</label>
+                        <input type="time" id="hora-turno" name="hora-turno" min="08:00" max="21:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Confirmar Turno</button>
+
+                </form>
+
+                <div class="reservation-summary">
+                    <h3>Tu Reserva</h3>
+                    <div id="reservation-details">
+                        <p id="no-turno">Seleccione un servicio para ver los detalles.</p>
+                    </div>
+                    <div id="fecha-turno">
+                        <p></p>
+                    </div>
+                    <div class="price-summary">
+                        <p>Total estimado: <span id="total-price">$0</span></p>
+                    </div>
+                </div>
+
+                <div class="reservation-summary">
+                    <h3>Tus Turnos</h3>
+                    <div id="reservationdetails">
+                        <p id="noturno">Confirme un turno para ver los detalles.</p>
+                    </div>
+                    <div>
+                        <p><span id="totalprice"></span></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Reserva Confirmada</h2>
+            <p id="modal-message">Tu reserva ha sido confirmada con éxito.</p>
+            <button id="modal-button" class="btn-primary">Aceptar</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/db.js"> </script>
+    <script src="js/script.js"></script>
+    <script src="js/turnos.js"></script>
+
+
+
+
+
+</body>
+
+</html>
